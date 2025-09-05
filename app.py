@@ -39,5 +39,9 @@ def predict():
         file.save(filepath)
         final = braintumor(model,image=filepath)
         return render_template('prediction.html',user_image= filepath, finaloutput = final)
-if __name__=='__main__':
-    app.run(debug=True)
+import os
+
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
