@@ -18,10 +18,10 @@ def braintumor(model, image):
     prediction = np.argmax(result)
 
     if prediction==0:
-        message = "By the MRI it appears that the person doesn't has brain tumor. Your tumor report is negative"
+        message = “The MRI findings do not show any evidence of a brain tumor. The report is negative for tumor.”
     else:
-        message = "By the MRI it appears that the person is suffering from brain tumor. So it is advisable to contact a doctor."
-
+        message = “The MRI findings are suggestive of a brain tumor. The report is positive for tumor.”
+                                                            
     return message
 # CREATING FLASK INSTANCE
 app = Flask(__name__)
